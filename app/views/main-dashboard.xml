@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout rows="auto, *" class="bg-gray-100">
+        <!-- Header -->
+        <GridLayout row="0" columns="auto, *, auto" class="p-4 bg-white border-b">
+            <Image src="~/assets/logo.png" width="40" height="40" col="0" />
+            <SearchBar hint="Search events or performers" col="1" />
+            <Button text="Filter" tap="{{ onFilter }}" col="2" />
+        </GridLayout>
+
+        <!-- Main Content -->
+        <ScrollView row="1">
+            <StackLayout class="p-4">
+                <!-- Featured Section -->
+                <Label text="Featured Events" class="text-xl font-bold mb-2" />
+                <ListView items="{{ featuredEvents }}" height="200" class="mb-4">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="p-2">
+                            <Image src="{{ image }}" width="80" height="80" col="0" class="rounded" />
+                            <StackLayout col="1" class="ml-2">
+                                <Label text="{{ title }}" class="font-bold" />
+                                <Label text="{{ date }}" class="text-gray-600" />
+                                <Label text="{{ price }}" class="text-blue-500" />
+                            </StackLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+
+                <!-- Categories -->
+                <Label text="Browse by Category" class="text-xl font-bold mb-2" />
+                <WrapLayout class="mb-4">
+                    <Button text="Music" tap="{{ onCategoryTap }}" class="m-1" />
+                    <Button text="Dance" tap="{{ onCategoryTap }}" class="m-1" />
+                    <Button text="Comedy" tap="{{ onCategoryTap }}" class="m-1" />
+                    <Button text="Magic" tap="{{ onCategoryTap }}" class="m-1" />
+                </WrapLayout>
+
+                <!-- Trending Performers -->
+                <Label text="Trending Performers" class="text-xl font-bold mb-2" />
+                <ListView items="{{ trendingPerformers }}" height="300">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="p-2">
+                            <Image src="{{ profileImage }}" width="60" height="60" col="0" class="rounded-full" />
+                            <StackLayout col="1" class="ml-2">
+                                <Label text="{{ name }}" class="font-bold" />
+                                <Label text="{{ talent }}" class="text-gray-600" />
+                                <Label text="{{ rating }}" class="text-yellow-500" />
+                            </StackLayout>
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

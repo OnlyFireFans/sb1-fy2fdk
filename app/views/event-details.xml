@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="{{ event.venuePhotos[0] }}" height="200" stretch="aspectFill" class="rounded-lg mb-4" />
+            
+            <Label text="{{ event.title }}" class="text-2xl font-bold mb-2" />
+            <Label text="{{ event.location }}" class="text-lg text-gray-600 mb-2" />
+            <Label text="{{ formattedDate }}" class="text-lg text-gray-600 mb-2" />
+            
+            <GridLayout columns="*, auto" class="mb-4">
+                <Label text="Budget:" col="0" class="font-bold" />
+                <Label text="{{ '$' + event.budget }}" col="1" class="text-green-600" />
+            </GridLayout>
+            
+            <Label text="Description" class="font-bold mb-2" />
+            <Label text="{{ event.description }}" class="mb-4" textWrap="true" />
+            
+            <Label text="Required Performers" class="font-bold mb-2" />
+            <Label text="{{ event.requiredPerformers }}" class="mb-4" textWrap="true" />
+            
+            <Button text="{{ isOrganizer ? 'View Applications' : 'Apply Now' }}" 
+                    tap="{{ isOrganizer ? onViewApplications : onApply }}" 
+                    class="primary-button mb-4" />
+            
+            <GridLayout rows="auto" columns="*, *" class="mb-4">
+                <Button text="Message Organizer" tap="{{ onMessage }}" col="0" class="m-1" />
+                <Button text="Share Event" tap="{{ onShare }}" col="1" class="m-1" />
+            </GridLayout>
+            
+            <Label text="{{ errorMessage }}" class="text-red-500 text-center" 
+                   visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </ScrollView>
+</Page>

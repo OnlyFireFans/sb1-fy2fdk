@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout class="gradient-background">
+        <StackLayout class="p-8 items-center">
+            <Image src="~/assets/logo.png" class="logo" />
+            <Label text="OnlyFireFans" class="welcome-text mt-4" />
+            
+            <StackLayout class="w-full mt-8">
+                <Button text="Create New Account" tap="{{ onNewAccount }}" class="button primary-button" />
+                <Button text="Sign In" tap="{{ onSignIn }}" class="button secondary-button" />
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

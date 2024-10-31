@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Create New Event" class="text-2xl font-bold mb-4" />
+            
+            <TextField hint="Event Title" text="{{ title }}" class="input mb-3" />
+            <TextField hint="Location" text="{{ location }}" class="input mb-3" />
+            <DateTimePicker date="{{ eventDate }}" class="mb-3" />
+            <TextField hint="Budget ($)" text="{{ budget }}" keyboardType="number" class="input mb-3" />
+            <TextView hint="Event Description" text="{{ description }}" class="input mb-3" height="100" />
+            <TextView hint="Required Performer Types" text="{{ requiredPerformers }}" class="input mb-3" height="100" />
+            
+            <GridLayout rows="auto" columns="*, *" class="mb-4">
+                <Button text="Add Venue Photo" tap="{{ onAddVenuePhoto }}" col="0" class="m-1" />
+                <Label text="{{ photoCount }}/5 photos" col="1" class="text-center" />
+            </GridLayout>
+            
+            <Button text="Create Event" tap="{{ onCreateEvent }}" class="primary-button" />
+            <Label text="{{ errorMessage }}" class="text-red-500 text-center" visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </ScrollView>
+</Page>

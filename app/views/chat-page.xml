@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout rows="*, auto">
+        <!-- Chat Messages -->
+        <ListView items="{{ messages }}" row="0" class="bg-gray-100">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *" class="p-2">
+                    <Image src="{{ senderImage }}" width="40" height="40" col="0" class="rounded-full" visibility="{{ !isCurrentUser ? 'visible' : 'collapsed' }}" />
+                    <StackLayout col="1" class="ml-2" horizontalAlignment="{{ isCurrentUser ? 'right' : 'left' }}">
+                        <Label text="{{ message }}" class="p-2 rounded-lg" 
+                               backgroundColor="{{ isCurrentUser ? '#007AFF' : '#E5E5EA' }}"
+                               color="{{ isCurrentUser ? '#FFFFFF' : '#000000' }}" />
+                        <Label text="{{ timestamp }}" class="text-xs text-gray-500" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Message Input -->
+        <GridLayout rows="auto" columns="*, auto" row="1" class="p-2 bg-white border-t">
+            <TextField hint="Type a message..." text="{{ newMessage }}" col="0" class="input" />
+            <Button text="Send" tap="{{ onSendMessage }}" col="1" class="ml-2 primary-button" />
+        </GridLayout>
+    </GridLayout>
+</Page>

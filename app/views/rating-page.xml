@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <StackLayout class="p-4">
+        <Label text="Rate Your Experience" class="text-2xl font-bold mb-4 text-center" />
+        
+        <Image src="{{ targetUser.profileImage }}" width="100" height="100" class="rounded-full mb-4" horizontalAlignment="center" />
+        <Label text="{{ targetUser.name }}" class="text-lg text-center mb-4" />
+        
+        <GridLayout rows="auto" columns="auto,auto,auto,auto,auto" horizontalAlignment="center" class="mb-4">
+            <Button text="★" tap="{{ onRatingTap }}" col="0" class="star-button" data-rating="1" />
+            <Button text="★" tap="{{ onRatingTap }}" col="1" class="star-button" data-rating="2" />
+            <Button text="★" tap="{{ onRatingTap }}" col="2" class="star-button" data-rating="3" />
+            <Button text="★" tap="{{ onRatingTap }}" col="3" class="star-button" data-rating="4" />
+            <Button text="★" tap="{{ onRatingTap }}" col="4" class="star-button" data-rating="5" />
+        </GridLayout>
+        
+        <TextView hint="Write your review (optional)" text="{{ review }}" class="input mb-4" height="100" />
+        
+        <Button text="Submit Rating" tap="{{ onSubmitRating }}" class="primary-button" />
+        
+        <Label text="{{ errorMessage }}" class="text-red-500 text-center mt-4" 
+               visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

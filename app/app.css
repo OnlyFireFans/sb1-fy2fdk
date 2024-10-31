@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-background {
+    background: linear-gradient(45deg, #00a2ff, #ff6b00);
+}
+
+.blur-effect {
+    backdrop-filter: blur(10);
+}
+
+.logo {
+    width: 200;
+    height: 200;
+}
+
+.welcome-text {
+    color: #ffffff;
+    font-size: 24;
+    font-weight: bold;
+}
+
+.button {
+    border-radius: 20;
+    padding: 15;
+    margin: 10;
+    color: white;
+    font-weight: bold;
+}
+
+.primary-button {
+    background: linear-gradient(45deg, #ff6b00, #00a2ff);
+}
+
+.secondary-button {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.star-button {
+    font-size: 24;
+    color: #808080;
+    background-color: transparent;
+    border-width: 0;
+    margin: 0 2;
+}
+
+.chat-bubble {
+    border-radius: 15;
+    padding: 10;
+    margin: 5;
+    max-width: 80%;
+}
+
+.chat-bubble-sent {
+    background-color: #007AFF;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-bubble-received {
+    background-color: #E5E5EA;
+    color: black;
+    align-self: flex-start;
+}

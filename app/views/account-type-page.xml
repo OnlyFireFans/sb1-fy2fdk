@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout class="gradient-background">
+        <StackLayout class="p-8">
+            <Label text="Choose Account Type" class="welcome-text text-center mb-8" />
+            
+            <Button text="Performer" tap="{{ onPerformerSelect }}" class="button primary-button" />
+            <Button text="Event Organizer" tap="{{ onOrganizerSelect }}" class="button secondary-button" />
+        </StackLayout>
+    </GridLayout>
+</Page>

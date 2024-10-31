@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Create Event Organizer Profile" class="text-2xl font-bold mb-4" />
+            
+            <TextField hint="Event Location" text="{{ location }}" class="input mb-3" />
+            <TextField hint="Event Date & Time" text="{{ eventTime }}" class="input mb-3" />
+            <TextView hint="Type of Performers Needed" text="{{ performerTypes }}" class="input mb-3" />
+            <TextField hint="Maximum Budget ($)" text="{{ budget }}" keyboardType="number" class="input mb-3" />
+            
+            <GridLayout rows="auto" columns="*, *" class="mb-4">
+                <Button text="Add Venue Photo" tap="{{ onAddVenuePhoto }}" col="0" class="m-1" />
+                <Button text="Add Venue Photo" tap="{{ onAddVenuePhoto }}" col="1" class="m-1" />
+            </GridLayout>
+            <GridLayout rows="auto" columns="*, *" class="mb-4">
+                <Button text="Add Venue Photo" tap="{{ onAddVenuePhoto }}" col="0" class="m-1" />
+                <Button text="Add Venue Photo" tap="{{ onAddVenuePhoto }}" col="1" class="m-1" />
+            </GridLayout>
+            
+            <Button text="Create Profile" tap="{{ onCreateProfile }}" class="primary-button" />
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Create Performer Profile" class="text-2xl font-bold mb-4" />
+            
+            <TextField hint="Full Name" text="{{ name }}" class="input mb-3" />
+            <TextField hint="Talent/Skill" text="{{ talent }}" class="input mb-3" />
+            <TextField hint="Hourly Rate ($)" text="{{ rate }}" keyboardType="number" class="input mb-3" />
+            <TextField hint="Performance Duration (minutes)" text="{{ duration }}" keyboardType="number" class="input mb-3" />
+            
+            <GridLayout rows="auto" columns="*, *, *" class="mb-4">
+                <Button text="Add Photo" tap="{{ onAddPhoto }}" col="0" class="m-1" />
+                <Button text="Add Photo" tap="{{ onAddPhoto }}" col="1" class="m-1" />
+                <Button text="Add Photo" tap="{{ onAddPhoto }}" col="2" class="m-1" />
+            </GridLayout>
+            
+            <GridLayout rows="auto" columns="*, *, *" class="mb-4">
+                <Button text="Add Video" tap="{{ onAddVideo }}" col="0" class="m-1" />
+                <Button text="Add Video" tap="{{ onAddVideo }}" col="1" class="m-1" />
+                <Button text="Add Video" tap="{{ onAddVideo }}" col="2" class="m-1" />
+            </GridLayout>
+            
+            <Button text="Create Profile" tap="{{ onCreateProfile }}" class="primary-button" />
+        </StackLayout>
+    </ScrollView>
+</Page>

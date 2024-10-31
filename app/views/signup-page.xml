@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <GridLayout class="gradient-background">
+        <StackLayout class="p-8 blur-effect">
+            <Label text="Create Account" class="welcome-text text-center mb-8" />
+            
+            <TextField hint="Email" text="{{ email }}" keyboardType="email" class="input p-4 mb-4 rounded-lg" />
+            <TextField hint="Password" text="{{ password }}" secure="true" class="input p-4 mb-4 rounded-lg" />
+            <TextField hint="Confirm Password" text="{{ confirmPassword }}" secure="true" class="input p-4 mb-4 rounded-lg" />
+            
+            <Button text="Create Account" tap="{{ onSignUp }}" class="button primary-button" />
+            <Button text="Back" tap="{{ onBack }}" class="button secondary-button" />
+            
+            <Label text="{{ errorMessage }}" class="text-red-500 text-center mt-4" visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </GridLayout>
+</Page>
